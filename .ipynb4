@@ -1,0 +1,22 @@
+n_sim <- 10000
+lambda <- mean(insurance_data$claims_count)
+mean_sev <- mean(severity_data$claim_amount)
+
+aggregate_loss <- rpois(n_sim, lambda) * mean_sev
+
+
+# Risk Metrics #
+
+VaR_95 <- quantile(aggregate_loss, 0.95)
+VaR_99 <- quantile(aggregate_loss, 0.99)
+
+mean_loss <- mean(aggregate_loss)
+
+mean_loss
+VaR_95
+VaR_99
+# Business Interpretation
+
+Expected Loss: Used for pricing
+
+VaR (95%, 99%): Used for capital allocation and solvency analysis #
