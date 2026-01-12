@@ -1,0 +1,14 @@
+#Claim Frequency Modeling#
+freq_model <- glm(claims_count ~ exposure,
+                  family = poisson(),
+                  data = insurance_data)
+
+summary(freq_model)
+
+
+
+# Interpretation (Company Language)
+
+Exposure is positively associated with claim frequency
+
+Poisson model is suitable for low-frequency insurance claims#
