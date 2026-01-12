@@ -1,0 +1,14 @@
+severity_data <- subset(insurance_data, claim_amount > 0)
+
+sev_model <- glm(claim_amount ~ 1,
+                 family = Gamma(link = "log"),
+                 data = severity_data)
+
+summary(sev_model)
+
+
+# Interpretation
+
+Gamma distribution appropriately captures right-skewed insurance losses
+
+Estimated mean severity reflects expected claim cost  #
